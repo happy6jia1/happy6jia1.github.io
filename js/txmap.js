@@ -3,7 +3,7 @@ $.ajax({
     type: 'get',
     url: 'https://apis.map.qq.com/ws/location/v1/ip',
     data: {
-        key: '你的key',
+        key: '7L3BZ-SDZLV-RZ3PR-UQMW2-EBJN7-45FBA',
         output: 'jsonp',
     },
     dataType: 'jsonp',
@@ -29,7 +29,7 @@ function getDistance(e1, n1, e2, n2) {
 
 function showWelcome() {
 
-    let dist = getDistance(113.34499552, 23.15537143, ipLoacation.result.location.lng, ipLoacation.result.location.lat); //这里换成自己的经纬度
+    let dist = getDistance(113.387621, 22.431503, ipLoacation.result.location.lng, ipLoacation.result.location.lat); //这里换成自己的经纬度
     let pos = ipLoacation.result.ad_info.nation;
     let ip;
     let posdesc;
@@ -212,13 +212,9 @@ function showWelcome() {
     else if (date.getHours() >= 19 && date.getHours() < 24) timeChange = "<span>晚上好</span>，夜生活嗨起来！";
     else timeChange = "夜深了，早点休息，少熬夜。";
 
-    try {
-        //自定义文本和需要放的位置
-        document.getElementById("welcome-info").innerHTML =
-            `<b><center>🎉 欢迎信息 🎉</center>&emsp;&emsp;欢迎来自 <span style="color:var(--theme-color)">${pos}</span> 的小伙伴，${timeChange}您现在距离站长约 <span style="color:var(--theme-color)">${dist}</span> 公里，当前的IP地址为： <span style="color:var(--theme-color)">${ip}</span>， ${posdesc}</b>`;
-    } catch (err) {
-        // console.log("Pjax无法获取#welcome-info元素🙄🙄🙄")
-    }
+    
+   /*自定义文本需要放的位置*/
+   document.getElementById("welcome-info").innerHTML = `<center style="color: #d7d7d77d;">🎉 欢迎信息 🎉</center>&emsp;&emsp;欢迎来自<span>${pos}</span>的小伙伴，${timeChange}您现在距离博主约有<span>${dist}</span>公里<br><div class="my_hr"></div><center style="color: #d7d7d77d;">✨ 博主の留言 ✨</center>私人博客,非允许勿传播本博客信息及博客原创内容,谢谢合作!`;
 }
 window.onload = showWelcome;
 // 如果使用了pjax在加上下面这行代码
