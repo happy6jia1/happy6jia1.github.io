@@ -214,7 +214,7 @@ function showWelcome() {
 
     
    /*自定义文本需要放的位置*/
-   document.getElementById("welcome-info").innerHTML = `<center style="color: #d7d7d77d;">🎉 欢迎信息 🎉</center>&emsp;&emsp;欢迎来自<span>${pos}</span>的小伙伴，${timeChange}您现在距离博主约有<span>${dist}</span>公里<br><div class="my_hr"></div><center style="color: #d7d7d77d;">✨ 博主の留言 ✨</center>私人博客,非允许勿传播本博客信息及博客原创内容,谢谢合作!`;
+   document.getElementById("welcome-info").innerHTML = `<center style="color: #ffff00;">🎉 欢迎信息 🎉</center>&emsp;&emsp;欢迎来自<span>${pos}</span>的小伙伴，${timeChange}您现在距离博主约有<span>${dist}</span>公里<br><div class="my_hr"></div><center style="color: #ffff00;">✨ 博主の留言 ✨</center>私人博客,非允许勿传播本博客信息及博客原创内容,谢谢合作!`;
 }
 window.onload = showWelcome;
 // 如果使用了pjax在加上下面这行代码

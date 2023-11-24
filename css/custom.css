@@ -1,3 +1,34 @@
+/* root伪类指定全局颜色 */
+:root {
+  --blue-custom: #5ea6e5;
+  --loading-color: rgba(207, 246, 247, 0.92);
+  --border-color: #c9c9c9;
+  --color-red: rgb(241, 71, 71);
+  --color-orange: rgb(241, 162, 71);
+  --color-yellow: rgb(241, 238, 71);
+  --color-purple: rgb(179, 71, 241);
+  --color-blue: rgb(102, 204, 255);
+  --color-gray: rgb(226, 226, 226);
+  --color-green: rgb(57, 197, 187);
+  --color-whitegray: rgb(241, 241, 241);
+  --color-pink: rgb(237, 112, 155);
+  --color-black: rgb(0, 0, 0);
+  --color-darkblue: rgb(97, 100, 159);
+  --color-heoblue: rgb(66, 90, 239);
+  --btn-bg: var(--theme-color) !important;
+  --scrollbar-color: var(--theme-color) !important;
+  --border-style: 1px solid rgba(169, 169, 169, 0.7);
+  /* 代码框行数背景色 */
+  --hlnumber-bg: #282c34;
+  /* 代码框顶部背景色 */
+  --hltools-bg: #1c1c1c;
+  /* 代码框背景色 */
+  --hl-bg: #282c34;
+}
+
+
+
+
 /* 页脚与头图透明 */
 #footer {
     background: transparent !important;
@@ -491,10 +522,187 @@
 
 /* 欢迎信息 */
 #welcome-info {
-  background: linear-gradient(45deg, #b9f4f3, #e3fbf9);
+  background: linear-gradient(45deg, #f4b9b9, rgb(251, 227, 227));
   border-radius: 18px;
   padding: 8px;
 }
 [data-theme="dark"] #welcome-info {
   background: #212121;
+}
+
+
+
+/* 右键菜单 */
+#rightMenu {
+  display: none;
+  position: fixed;
+  width: 160px;
+  height: fit-content;
+  top: 10%;
+  left: 10%;
+    /* 菜单面板背景色 */
+  background-color: var(--card-bg);
+    /* 菜单面板文字颜色 */
+  border: 1px solid var(--font-color);
+  border-radius: 8px;
+  z-index: 100;
+}
+#rightMenu .rightMenu-group {
+  padding: 7px 6px;
+}
+#rightMenu .rightMenu-group:not(:nth-last-child(1)) {
+  border-bottom: 1px solid var(--font-color);
+}
+#rightMenu .rightMenu-group.rightMenu-small {
+  display: flex;
+  justify-content: space-between;
+}
+#rightMenu .rightMenu-group .rightMenu-item {
+  height: 30px;
+  line-height: 30px;
+  border-radius: 8px;
+  transition: 0.3s;
+  color: var(--font-color);
+}
+#rightMenu .rightMenu-group.rightMenu-line .rightMenu-item {
+  display: flex;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 4px;
+}
+#rightMenu .rightMenu-group .rightMenu-item:hover {
+    /* 鼠标悬浮选项颜色 */
+  background-color: var(--text-bg-hover);
+}
+#rightMenu .rightMenu-group .rightMenu-item i {
+  display: inline-block;
+  text-align: center;
+  line-height: 30px;
+  width: 30px;
+  height: 30px;
+  padding: 0 5px;
+}
+#rightMenu .rightMenu-group .rightMenu-item span {
+  line-height: 30px;
+}
+
+#rightMenu .rightMenu-group.rightMenu-line .rightMenu-item * {
+  height: 40px;
+  line-height: 40px;
+}
+.rightMenu-group.hide {
+  display: none;
+}
+
+
+/* 去掉导航栏项目底下的蓝色长条 */
+#nav *::after{
+  background-color: transparent!important;
+}
+
+/* 网站标题部分的增强版 */
+#site-name::before{
+  opacity: 0;
+  background-color: var(--lyx-theme)!important;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  transition: .3s;
+  -webkit-transition: .3s;
+  -moz-transition: .3s;
+  -ms-transition: .3s;
+  -o-transition: .3s;
+  position:absolute;
+  top:0!important;
+  right:0!important;
+  width:100%;
+  height:100%;
+  content: "\f015";
+  box-shadow: 0 0 5px var(--lyx-theme);
+  font-family: "Font Awesome 6 Free";
+  text-align: center;
+  color:white;
+  line-height:34px;/*如果有溢出或者垂直不居中的现象微调一下这个参数*/
+  font-size: 18px;/*根据个人喜好*/
+}
+#site-name:hover::before{
+  opacity: 1;
+  scale:1.03;
+}
+#site-name{
+  position: relative;
+  font-size: 24px; /*一定要把字体调大点，否则效果惨不忍睹！*/
+}
+
+
+/* 滚动条样式 */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgba(73, 225, 245, 0.1);
+  border-radius: 2em;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--theme-color);
+  background-image: -webkit-linear-gradient(
+    45deg,
+    rgb(73, 225, 245,1) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(73, 225, 245,1) 50%,
+    rgba(73, 225, 245,1) 75%,
+    transparent 75%,
+    transparent
+  );
+  border-radius: 2em;
+}
+
+::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+
+::-moz-selection {
+  color: #ffffff;
+  background-color: var(--theme-color) !important;
+}
+
+@font-face {
+  /* 为载入的字体取名字(随意) */
+  font-family: 'Font1';	
+  /* 字体文件地址(相对或者绝对路径都可以) */
+  src: url(/source/font/阿里黑体.ttf);
+  /* 定义显示样式 */
+  font-display: swap;
+}
+
+@font-face {
+  /* 为载入的字体取名字(随意) */
+  font-family: 'Font2';	
+  /* 字体文件地址(相对或者绝对路径都可以) */
+  src: url(/source/font/阿里黑体.woff);
+  /* 定义显示样式 */
+  font-display: swap;
+}
+
+@font-face {
+  /* 为载入的字体取名字(随意) */
+  font-family: 'Font3';	
+  /* 字体文件地址(相对或者绝对路径都可以) */
+  src: url(/source/font/NotoSansSC-VariableFont_wght.ttf);
+  /* 定义显示样式 */
+  font-display: swap;
+}
+@font-face {
+  /* 为载入的字体取名字(随意) */
+  font-family: 'Font4';	
+  /* 字体文件地址(相对或者绝对路径都可以) */
+  src: url(/source/font/ZhuZiAWan.ttf);
+  /* 定义显示样式 */
+  font-display: swap;
 }
