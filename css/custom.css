@@ -672,37 +672,12 @@
   background-color: var(--theme-color) !important;
 }
 
+
 @font-face {
   /* 为载入的字体取名字(随意) */
   font-family: 'Font1';	
   /* 字体文件地址(相对或者绝对路径都可以) */
-  src: url(/source/font/阿里黑体.ttf);
-  /* 定义显示样式 */
-  font-display: swap;
-}
-
-@font-face {
-  /* 为载入的字体取名字(随意) */
-  font-family: 'Font2';	
-  /* 字体文件地址(相对或者绝对路径都可以) */
   src: url(/source/font/阿里黑体.woff);
-  /* 定义显示样式 */
-  font-display: swap;
-}
-
-@font-face {
-  /* 为载入的字体取名字(随意) */
-  font-family: 'Font3';	
-  /* 字体文件地址(相对或者绝对路径都可以) */
-  src: url(/source/font/NotoSansSC-VariableFont_wght.ttf);
-  /* 定义显示样式 */
-  font-display: swap;
-}
-@font-face {
-  /* 为载入的字体取名字(随意) */
-  font-family: 'Font4';	
-  /* 字体文件地址(相对或者绝对路径都可以) */
-  src: url(/source/font/ZhuZiAWan.ttf);
   /* 定义显示样式 */
   font-display: swap;
 }
