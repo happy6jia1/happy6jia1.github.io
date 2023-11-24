@@ -7,10 +7,6 @@ function debounce(fn, time) {
 }
 
 
-// 设置字体
-if (localStorage.getItem("font") == undefined) {
-    localStorage.setItem("font", "Misans");
-  }
 
 // // 复制提醒
 // document.addEventListener("copy", function () {
