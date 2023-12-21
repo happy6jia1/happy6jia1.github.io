@@ -1119,5 +1119,17 @@ button#go-up:hover #percent {
   a.category-list-link::before {
   content: "🍖";
 }
-
-
+#page .category-lists .category-list li.category-list-item:nth-child(9) {
+  background: -webkit-linear-gradient(left, #f12711, #f5af19);
+  background: -moz-linear-gradient(left, #f12711, #f5af19);
+  background: -o-linear-gradient(left, #f12711, #f5af19);
+  background: -ms-linear-gradient(left, #f12711, #f5af19);
+  background: linear-gradient(to right, #f12711, #f5af19);
+}
+#page
+  .category-lists
+  .category-list
+  li.category-list-item:nth-child(9)
+  a.category-list-link::before {
+  content: "🍯";
+}
